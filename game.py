@@ -6,12 +6,12 @@ with open('words.txt','r') as f:
 tries = 3
 word_answer = [letter for letter in word]
 word_answer.pop()
-print(word_answer)
 wordlist = ['_' for char in word_answer]
 playing = True
 while playing:
     print('------------------------------')
     print('Tries:',tries) 
+    print(wordlist)
     word_input = input('Guess the letter: ')
     if word_input in word_answer and word_input not in wordlist:  
         print('You are right!')
