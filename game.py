@@ -5,12 +5,12 @@ with open('words.txt','r') as f:
 
 tries = 3
 word_answer = [letter for letter in word]
+word_answer.pop() 
 wordlist = ['_' for char in word_answer]
-word_answer.pop()
 playing = True
 print('Welcome to Hangman!')
 while playing:
-    blank = ' '.join(wordlist)
+    blank = ''.join(wordlist)
     print('------------------------------')
     print('Tries:',tries) 
     print(blank)
@@ -30,15 +30,12 @@ while playing:
         tries -= 1 
         
     if tries <= 0:
-        print(blank)
         print('')
         print('Game Over!')
         print('')
         print('The word was',word)
         playing = False
     if wordlist == word_answer:
-        print(blank)
-        print('')
         print('You win!')
         print('')
         playing = False 
